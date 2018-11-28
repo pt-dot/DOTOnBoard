@@ -1,0 +1,16 @@
+PODS:
+  - DOTOnBoard (0.1.0)
+
+DEPENDENCIES:
+  - DOTOnBoard (from `../`)
+
+EXTERNAL SOURCES:
+  DOTOnBoard:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DOTOnBoard: 6a4c1c9d9bd674589ba2d655242b05223a93159b
+
+PODFILE CHECKSUM: 6c5ce31835334127cc576c1acb6c949f752f52fa
+
+COCOAPODS: 1.6.0.beta.2

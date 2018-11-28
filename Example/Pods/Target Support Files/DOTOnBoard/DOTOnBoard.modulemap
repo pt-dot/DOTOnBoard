@@ -1,0 +1,6 @@
+framework module DOTOnBoard {
+  umbrella header "DOTOnBoard-umbrella.h"
+
+  export *
+  module * { export * }
+}
