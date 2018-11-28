@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DOTOnBoard_Example' do
+  pod 'DOTOnBoard', :path => '../'
+
+  target 'DOTOnBoard_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
