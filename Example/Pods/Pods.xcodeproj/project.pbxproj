@@ -15,6 +15,9 @@
 		8655E3207309D97A63F7F8CC2F6770A6 /* Pods-DOTOnBoard_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08683ED79FA5779F10DDFE0B3DDFAC17 /* Pods-DOTOnBoard_Tests-dummy.m */; };
 		886E3AB7D31563CB17475229A817DEAE /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A8B3986F48F8DC9A6CB1FEFA6CF88 /* ReplaceMe.swift */; };
 		8DE09361B038A28A539C35CE9B58B80B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		E04998FF21AF5EAD0031DFC5 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04998FC21AF5EAD0031DFC5 /* Slide.xib */; };
+		E049990021AF5EAD0031DFC5 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04998FD21AF5EAD0031DFC5 /* OnBoardViewController.swift */; };
+		E049990121AF5EAD0031DFC5 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04998FE21AF5EAD0031DFC5 /* Slide.swift */; };
 		E37EF1932B791CEE0254159FC99B1010 /* Pods-DOTOnBoard_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89284A881A9417C8618418C780BD2A80 /* Pods-DOTOnBoard_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F99058C829CF1EF75AD7F0AD170B3B1F /* DOTOnBoard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF15153B5D903639EEBD8C4CC0EFE2B /* DOTOnBoard-dummy.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,9 @@
 		CF7A177813CB9E285D93A6757B138E1C /* Pods-DOTOnBoard_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DOTOnBoard_Example.modulemap"; sourceTree = "<group>"; };
 		D47256E674801767D0043FE5C6100753 /* Pods-DOTOnBoard_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DOTOnBoard_Example-dummy.m"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E04998FC21AF5EAD0031DFC5 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		E04998FD21AF5EAD0031DFC5 /* OnBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
+		E04998FE21AF5EAD0031DFC5 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		E26DFB5076B6F8E3BD5954DD10325C93 /* Pods-DOTOnBoard_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DOTOnBoard_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F2155F304AAC29BFCEE95661DF6A7DF8 /* Pods_DOTOnBoard_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DOTOnBoard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EA83E77CB9BCC058D5A6EF9CDB155A /* DOTOnBoard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DOTOnBoard.podspec; sourceTree = "<group>"; tabWidth = 2; };
@@ -213,6 +219,9 @@
 		E67059AAABEA360E1CB492D8A7A6127B /* DOTOnBoard */ = {
 			isa = PBXGroup;
 			children = (
+				E04998FD21AF5EAD0031DFC5 /* OnBoardViewController.swift */,
+				E04998FE21AF5EAD0031DFC5 /* Slide.swift */,
+				E04998FC21AF5EAD0031DFC5 /* Slide.xib */,
 				1E1A8B3986F48F8DC9A6CB1FEFA6CF88 /* ReplaceMe.swift */,
 				D39166852B92B0FDF3DEB935AC6A8C40 /* Pod */,
 				04D30FF31FD486483E984F461A0F9921 /* Support Files */,
@@ -347,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04998FF21AF5EAD0031DFC5 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F99058C829CF1EF75AD7F0AD170B3B1F /* DOTOnBoard-dummy.m in Sources */,
+				E049990021AF5EAD0031DFC5 /* OnBoardViewController.swift in Sources */,
 				886E3AB7D31563CB17475229A817DEAE /* ReplaceMe.swift in Sources */,
+				E049990121AF5EAD0031DFC5 /* Slide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
