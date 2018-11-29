@@ -11,7 +11,11 @@ import Foundation
 
 open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
     
-    private var scrollView: UIScrollView!
+    private var scrollView: UIScrollView! {
+        didSet{
+            scrollView.delegate = self
+        }
+    }
     private var pageControl: UIPageControl!
     private var buttonSkip: UIButton!
     
@@ -23,15 +27,9 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        scrollView.delegate = self
-    }
-    
     open func setup(setScrollView scrollView: UIScrollView, setPageControl pageControl: UIPageControl) {
         self.scrollView = scrollView
         self.pageControl = pageControl
-    
     }
     
     private func setupView(){
@@ -40,7 +38,7 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
-        view.bringSubview(toFront: pageControl)
+        view.bringSubviewToFront(pageControl)
     }
     
     open func createSlides(slide: () -> [Slide]){
