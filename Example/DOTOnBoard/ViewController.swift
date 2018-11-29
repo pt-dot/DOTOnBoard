@@ -9,19 +9,17 @@
 import UIKit
 import DOTOnBoard
 
-class ViewController: UIViewController {
+class ViewController: OnBoardViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var buttonSkip: UIButton!
     
-    var board = OnBoardViewController()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        board.setup(scrollView, pageControl)
-        board.createSlides { () -> [Slide] in
+        setup(setScrollView: scrollView, setPageControl: pageControl)
+        createSlides { () -> [Slide] in
             let slide1:Slide = Slide.loadNib()
             slide1.imageView.image = UIImage(named: "img_onboard1")
             slide1.labelTitle.text = "Update Harga & Transparan"
@@ -39,7 +37,6 @@ class ViewController: UIViewController {
             
             return [slide1, slide2, slide3]
         }
-        
     }
 
 
