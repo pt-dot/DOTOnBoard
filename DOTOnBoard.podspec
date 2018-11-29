@@ -30,13 +30,13 @@ Coba membuat library untuk membantu pekerjaan
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'DOTOnBoard/Classes/**/*'
+  s.source_files = 'DOTOnBoard/Classes/**/*/*.xib'
   
-  # s.resource_bundles = {
-  #   'DOTOnBoard' => ['DOTOnBoard/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'DOTOnBoard' => ['DOTOnBoard/Assets/*.png/*.xib']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit'
+    s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
