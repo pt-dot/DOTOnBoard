@@ -30,7 +30,7 @@ Coba membuat library untuk membantu pekerjaan
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'DOTOnBoard/Classes/**/*'
+  s.source_files = 'DOTOnBoard/Classes/**/*.xib'
   
 #s.resource_bundles = {
 #    'DOTOnBoard' => ['DOTOnBoard/Assets/*.png/*']
