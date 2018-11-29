@@ -30,11 +30,12 @@ Coba membuat library untuk membantu pekerjaan
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'DOTOnBoard/Classes/**/*.xib'
-  
-#s.resource_bundles = {
-#    'DOTOnBoard' => ['DOTOnBoard/Assets/*.png/*']
-#  }
+  s.source_files = 'DOTOnBoard/Classes/**/*'
+
+  s.resources = 'DOTOnBoard/Resource/*'
+  s.resource_bundles = {
+    'DOTOnBoard' => ['DOTOnBoard/Assets/*.png/*', 'DOTOnBoard/Resource/*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
     s.frameworks = 'UIKit'
