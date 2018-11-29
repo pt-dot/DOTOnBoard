@@ -7,7 +7,9 @@ public class Slide: UIView {
     @IBOutlet public weak var labelDesc: UILabel!
     
     public static func loadNib() -> Slide {
-        let slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as? Slide
+        let bundle = Bundle(for: Slide.self).loadNibNamed("Slide", owner: self, options: nil)
+       
+        let slide = bundle?.first as? Slide
         if let slideView = slide {
             return slideView
         }
