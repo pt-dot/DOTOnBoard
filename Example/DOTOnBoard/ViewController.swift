@@ -15,30 +15,32 @@ class ViewController: OnBoardViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var buttonSkip: UIButton!
     
+    var child = OnBoardViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup(setScrollView: scrollView, setPageControl: pageControl)
-        createSlides { () -> [Slide] in
-            let slide1:Slide = Slide.loadNib()
-            slide1.imageView.image = UIImage(named: "img_onboard1")
-            slide1.labelTitle.text = "Update Harga & Transparan"
-            slide1.labelDesc.text = "Harga selalu update dengan perkembangan pasar dan transparan"
-            
-            let slide2:Slide = Slide.loadNib()
-            slide2.imageView.image = UIImage(named: "img_onboard2")
-            slide2.labelTitle.text = "Kualitas Terjamin"
-            slide2.labelDesc.text = "Jaminan barang terbaik dan standar yang sudah teruji"
-            
-            let slide3:Slide = Slide.loadNib()
-            slide3.imageView.image = UIImage(named: "img_onboard3")
-            slide3.labelTitle.text = "Transportasi"
-            slide3.labelDesc.text = "Penjemputan dan pengantaran sampai ketempat anda"
-            
-            return [slide1, slide2, slide3]
-        }
+        addChildVC(child)
+        
+        setup(setScrollView: scrollView)
+        addContent(imageName: "", title: "Update Harga & Transparan", description: "Harga selalu update dengan perkembangan pasar dan transparan")
+        addContent(imageName: "", title: "Kualitas Terjamin", description: "Jaminan barang terbaik dan standar yang sudah teruji")
+        addContent(imageName: "", title: "Transportasi", description: "Penjemputan dan pengantaran sampai ketempat anda")
     }
-
-
+    
 }
 
+extension UIViewController {
+    func addChildVC(_ child: UIViewController) {
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+    
+    func remove(){
+        guard parent != nil else {return}
+        willMove(toParent: nil)
+        removeFromParent()
+        view.removeFromSuperview()
+    }
+}
