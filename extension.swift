@@ -8,7 +8,7 @@
 import Foundation
 
 extension UIView {
-    func addConstraintWithVisualFormat(format: String, views: UIView...){
+    open func addConstraintWithVisualFormat(format: String, views: UIView...){
         var viewDictionary = [String: UIView]()
         for (index, view) in views.enumerated() {
             let key = "v\(index)"
@@ -21,13 +21,13 @@ extension UIView {
 }
 
 extension UIViewController {
-    func addChildVC(_ child: UIViewController) {
+    open func addChildVC(_ child: UIViewController) {
         addChild(child)
         view.addSubview(child.view)
         child.didMove(toParent: self)
     }
     
-    func remove(){
+    open func remove(){
         guard parent != nil else {return}
         willMove(toParent: nil)
         removeFromParent()

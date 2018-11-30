@@ -12,8 +12,6 @@ import DOTOnBoard
 class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var buttonSkip: UIButton!
     
     var child = OnBoardViewController()
     
