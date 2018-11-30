@@ -9,7 +9,7 @@
 import UIKit
 import DOTOnBoard
 
-class ViewController: OnBoardViewController {
+class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -22,10 +22,10 @@ class ViewController: OnBoardViewController {
         
         addChildVC(child)
         
-        setup(setScrollView: scrollView)
-        addContent(imageName: "", title: "Update Harga & Transparan", description: "Harga selalu update dengan perkembangan pasar dan transparan")
-        addContent(imageName: "", title: "Kualitas Terjamin", description: "Jaminan barang terbaik dan standar yang sudah teruji")
-        addContent(imageName: "", title: "Transportasi", description: "Penjemputan dan pengantaran sampai ketempat anda")
+        child.setup(setScrollView: scrollView)
+        child.addContent(imageName: "", title: "Update Harga & Transparan", description: "Harga selalu update dengan perkembangan pasar dan transparan")
+        child.addContent(imageName: "", title: "Kualitas Terjamin", description: "Jaminan barang terbaik dan standar yang sudah teruji")
+        child.addContent(imageName: "", title: "Transportasi", description: "Penjemputan dan pengantaran sampai ketempat anda")
     }
     
 }
