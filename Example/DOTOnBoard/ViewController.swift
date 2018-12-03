@@ -19,13 +19,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         addChildVC(child)
-        
+        child.delegate = self
         child.setup(setScrollView: scrollView)
         child.addContent(imageName: "", title: "Update Harga & Transparan", description: "Harga selalu update dengan perkembangan pasar dan transparan")
         child.addContent(imageName: "", title: "Kualitas Terjamin", description: "Jaminan barang terbaik dan standar yang sudah teruji")
         child.addContent(imageName: "", title: "Transportasi", description: "Penjemputan dan pengantaran sampai ketempat anda")
     }
     
+}
+
+extension UIViewController: OnBoardDelegate {
+    
+    public func didStart() {
+        
+    }
 }
 
 extension UIViewController {

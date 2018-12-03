@@ -9,14 +9,13 @@
 import UIKit
 import Foundation
 
-protocol OnBoardDelegate {
-    func didSkip()
+public protocol OnBoardDelegate {
     func didStart()
 }
 
 open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
     
-    var delegate: OnBoardDelegate?
+    open var delegate: OnBoardDelegate?
     private var scrollView: UIScrollView!{
         didSet{
             scrollView.delegate = self
@@ -32,6 +31,7 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         let button = UIButton(frame: CGRect.zero)
         button.setTitle("SKIP", for: .normal)
         button.setTitleColor(.red, for: .normal)
+        button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -83,7 +83,9 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         addView()
     }
     
-    private func setupView(){
+    private func setupView() {
+        
+        self.scrollView.delegate = self
         
         setupSlideScrollView(slides: slides)
         
@@ -92,8 +94,10 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         view.bringSubviewToFront(pageControl)
     }
     
-    open func createSlides(slide: () -> [Slide]){
-        slides = slide()
+    @objc func buttonAction(_ sender: UIButton){
+        if let delegate = delegate {
+            delegate.didStart()
+        }
     }
     
     func setupSlideScrollView(slides : [Slide]) {
