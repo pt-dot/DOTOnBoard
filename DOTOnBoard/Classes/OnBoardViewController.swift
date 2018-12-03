@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 public protocol OnBoardDelegate {
-    func didStart()
+    func didButtonClicked()
 }
 
 open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
@@ -31,6 +31,8 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         let button = UIButton(frame: CGRect.zero)
         button.setTitle("SKIP", for: .normal)
         button.setTitleColor(.red, for: .normal)
+        button.layer.cornerRadius = 4.0
+        button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         return button
     }()
@@ -70,9 +72,9 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         view.addSubview(viewContainer)
         
         viewContainer.addConstraintWithVisualFormat(format: "H:|[v0]|", views: pageControl)
-        viewContainer.addConstraintWithVisualFormat(format: "V:[v0]-10-[v1]-18-|", views: pageControl, button)
+        viewContainer.addConstraintWithVisualFormat(format: "V:[v0]-10-[v1(48)]-18-|", views: pageControl, button)
         
-        viewContainer.addConstraintWithVisualFormat(format: "H:|[v0]|", views: button)
+        viewContainer.addConstraintWithVisualFormat(format: "H:|-16-[v0]-16-|", views: button)
         
         view.addConstraintWithVisualFormat(format: "H:|[v0]|", views: viewContainer)
         view.addConstraintWithVisualFormat(format: "V:[v0(100)]|", views: viewContainer)
@@ -84,9 +86,6 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupView() {
-        
-        self.scrollView.delegate = self
-        
         setupSlideScrollView(slides: slides)
         
         pageControl.numberOfPages = slides.count
@@ -96,12 +95,13 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func buttonAction(_ sender: UIButton){
         if let delegate = delegate {
-            delegate.didStart()
+            delegate.didButtonClicked()
         }
     }
     
     func setupSlideScrollView(slides : [Slide]) {
         guard let scrollView = scrollView else {return}
+        
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
         scrollView.isPagingEnabled = true
@@ -112,13 +112,12 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    private func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
     }
     
-    private func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         
         // setup button
@@ -127,7 +126,7 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         if indexSelected == self.slides.count - 1 {
             UIView.animate(withDuration: 0.3, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 
-//                self.buttonSkip.titleLabel?.font = FontManager.boldFont(14)
+                self.button.titleLabel?.font = FontManager.boldFont(14)
                 self.button.setTitleColor(.white, for: .normal)
                 self.button.setTitle("START", for: .normal)
                 self.button.backgroundColor = UIColor.red
@@ -138,7 +137,7 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
             
             UIView.animate(withDuration: 0.3, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 
-//                self.buttonSkip.titleLabel?.font = FontManager.semiBoldFont(14)
+                self.button.titleLabel?.font = FontManager.semiBoldFont(14)
                 self.button.setTitle("SKIP", for: .normal)
                 self.button.backgroundColor = UIColor.clear
                 self.button.setTitleColor(.red, for: .normal)
@@ -149,7 +148,7 @@ open class OnBoardViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func scrollView(_ scrollView: UIScrollView, didScrollToPercentageOffset percentageHorizontalOffset: CGFloat) {
+    open func scrollView(_ scrollView: UIScrollView, didScrollToPercentageOffset percentageHorizontalOffset: CGFloat) {
         
         if(pageControl.currentPage == 0) {
             //Change background color to toRed: 103/255, fromGreen: 58/255, fromBlue: 183/255, fromAlpha: 1
