@@ -21,7 +21,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AK-y5-6Rg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
                                 <connections>
-                                    <outlet property="delegate" destination="sdV-P7-hR9" id="7LO-dg-16L"/>
+                                    <outlet property="delegate" destination="sdV-P7-hR9" id="gFv-6j-xV9"/>
                                 </connections>
                             </scrollView>
                         </subviews>

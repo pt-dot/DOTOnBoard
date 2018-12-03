@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         child.addContent(imageName: "", title: "Update Harga & Transparan", description: "Harga selalu update dengan perkembangan pasar dan transparan")
         child.addContent(imageName: "", title: "Kualitas Terjamin", description: "Jaminan barang terbaik dan standar yang sudah teruji")
         child.addContent(imageName: "", title: "Transportasi", description: "Penjemputan dan pengantaran sampai ketempat anda")
+        
     }
     
 }
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
 extension UIViewController: OnBoardDelegate {
     
     public func didStart() {
-        
+        print("ke klik")
     }
 }
 
