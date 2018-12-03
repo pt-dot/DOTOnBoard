@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Muli-SemiBold.ttf">
-            <string>Muli-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Onboarding Screen-->
         <scene sceneID="LLE-hC-39F">
@@ -26,49 +21,21 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AK-y5-6Rg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
                                 <connections>
-                                    <outlet property="delegate" destination="sdV-P7-hR9" id="7LO-dg-16L"/>
+                                    <outlet property="delegate" destination="sdV-P7-hR9" id="gFv-6j-xV9"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9TL-Fs-3QM">
-                                <rect key="frame" x="160" y="554" width="55" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.7843137255" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.31764705879999999" green="0.21176470589999999" blue="0.56078431370000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-ls-oB8" customClass="GSButton" customModule="Etapas" customModuleProvider="target">
-                                <rect key="frame" x="18" y="601" width="339" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="BZx-bv-ttJ"/>
-                                    <constraint firstAttribute="height" constant="48" id="uda-X7-HjK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
-                                <state key="normal" title="SKIP">
-                                    <color key="titleColor" red="0.7843137255" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oHe-ls-oB8" firstAttribute="top" secondItem="9TL-Fs-3QM" secondAttribute="bottom" constant="10" id="100-XQ-F75"/>
                             <constraint firstItem="6AK-y5-6Rg" firstAttribute="trailing" secondItem="ppC-ZC-s6P" secondAttribute="trailing" id="DxP-s9-TCr"/>
                             <constraint firstItem="6AK-y5-6Rg" firstAttribute="top" secondItem="ywO-Qh-UZU" secondAttribute="top" id="Emt-ow-AIp"/>
                             <constraint firstItem="6AK-y5-6Rg" firstAttribute="leading" secondItem="ppC-ZC-s6P" secondAttribute="leading" id="Ryz-YB-fK5"/>
                             <constraint firstItem="6AK-y5-6Rg" firstAttribute="centerY" secondItem="ppC-ZC-s6P" secondAttribute="centerY" id="Wyv-pW-izT"/>
-                            <constraint firstItem="9TL-Fs-3QM" firstAttribute="centerX" secondItem="ppC-ZC-s6P" secondAttribute="centerX" id="enR-He-HnU"/>
-                            <constraint firstItem="ppC-ZC-s6P" firstAttribute="trailing" secondItem="oHe-ls-oB8" secondAttribute="trailing" constant="18" id="k2q-8z-08r"/>
-                            <constraint firstItem="ppC-ZC-s6P" firstAttribute="bottom" secondItem="oHe-ls-oB8" secondAttribute="bottom" constant="18" id="lky-AJ-QWg"/>
                             <constraint firstItem="6AK-y5-6Rg" firstAttribute="centerX" secondItem="ppC-ZC-s6P" secondAttribute="centerX" id="pXm-N2-Acg"/>
-                            <constraint firstItem="oHe-ls-oB8" firstAttribute="leading" secondItem="ppC-ZC-s6P" secondAttribute="leading" constant="18" id="zwU-q4-xt8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ppC-ZC-s6P"/>
                     </view>
                     <connections>
-                        <outlet property="buttonSkip" destination="oHe-ls-oB8" id="e5F-GV-YbQ"/>
-                        <outlet property="pageControl" destination="9TL-Fs-3QM" id="C4F-Ei-9Ie"/>
                         <outlet property="scrollView" destination="6AK-y5-6Rg" id="S99-fZ-0t6"/>
                     </connections>
                 </viewController>
